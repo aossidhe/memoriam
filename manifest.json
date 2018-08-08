@@ -1,19 +1,18 @@
 {
     "manifest_version": 2,
     "name":    "Memoriam",
-    "version": "0.0",
-    "description": "Won't kill your family!",
+    "version": "0.2",
+    "description": "Now 30% more functional!",
     "background": {
         "persistent": false,
         "scripts": ["background.js"]
     },
     "content_scripts": [{
-        "matches": ["https://*.youtube.com/*"],
+        "matches": ["<all_urls>"],
         "js":      ["content.js"]
     }],
     "browser_action": {
-        "default_title": "Test Extension"
+        "default_title": "Test extension"
     },
-
     "permissions": ["activeTab"]
 }
