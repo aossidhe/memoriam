@@ -14,5 +14,8 @@
     "browser_action": {
         "default_title": "Test extension"
     },
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab",
+                    "tabs",
+                    "*://*.youtube.com/*",
+                    "webNavigation"]
 }
