@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 function defineRequest(playlistId){
   jQuery(document).ready(function() {
 
-        APIKey = "AIzaSyCNzzyd1PRyiW_aOR5negNPebKTDLJwbmw",
+        APIKey = "<GET THIS FROM ONLINE>",
         baseURL = "https://www.googleapis.com/youtube/v3/";
 
     jQuery.get(baseURL + "playlistItems?part=snippet&maxResults=50&playlistId=" + playlistId + "&key=" + APIKey, function(data) {
