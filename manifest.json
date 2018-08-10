@@ -2,14 +2,16 @@
     "manifest_version": 2,
     "name":    "Memoriam",
     "version": "0.2",
-    "description": "Now 30% more functional!",
+    "description": "If it's hacky and you know it, clap your hands...",
     "background": {
         "persistent": false,
-        "scripts": ["background.js"]
+        "scripts": ["background.js",
+                    "jQuery.js"]
     },
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js":      ["content.js"]
+        "js": ["jQuery.js",
+               "content.js"]
     }],
     "browser_action": {
         "default_title": "Test extension"
