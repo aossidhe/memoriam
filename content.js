@@ -26,9 +26,10 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 function defineRequest(playlistId){
   jQuery(document).ready(function() {
 
-        APIKey = "<GET THIS FROM ONLINE>",
+        APIKey = "AIzaSyD_GjTGvbB4_fAkpSdrQ1AMQ2iYs4_MPG0",
         baseURL = "https://www.googleapis.com/youtube/v3/";
 
+    getPlaylistInfo(playlistId);
     jQuery.get(baseURL + "playlistItems?part=snippet&maxResults=50&playlistId=" + playlistId + "&key=" + APIKey, function(data) {
         console.group("Retrieved Items");
         for(var i = 0; i < data.items.length; i++){
@@ -39,8 +40,17 @@ function defineRequest(playlistId){
         }
         console.info("Page Break");
         console.groupEnd();
-        console.log(data.items);
+        getPlaylistInfo(playlistId)
+        //console.log(data.items);
     });
 
 });
+}
+
+function getPlaylistInfo(playlistId){
+  jQuery(document).ready(function(){
+    jQuery.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2C+id&playlistId=' + playlistId + '&key=' + APIKey, function(data){
+      console.log(data);
+    });
+  })
 }
